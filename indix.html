@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Location</title>
+</head>
+<style>
+  #map {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<body>
+    <h1>Getting user location</h1>
+    <button id="get-location-button">Get Location</button>
+    <div id="map"></div>
+
+    <script type="text/javascript">
+        function initMap() {
+            var myLatLng = new google.maps.LatLng(30.12,31.33) 
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 12
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                title: "hello"
+            })
+            marker.setMap(map);
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdjgsiLUqLn80Q-7DQj283KjXJjr5YmKg&callback=initMap"></script>
+</body>
+</html>
+
